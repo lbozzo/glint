@@ -1,16 +1,15 @@
-import { dirname, join } from "path";
+import { dirname, join } from 'path';
 import type { StorybookConfig } from '@storybook/react-vite';
 
 const config: StorybookConfig = {
-  stories: ["../src/lib/**/*.@(mdx|stories.@(js|jsx|ts|tsx))"],
+  stories: ['../src/lib/**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],
   addons: [
-    getAbsolutePath("@storybook/addon-essentials"),
-    getAbsolutePath("@storybook/addon-interactions"),
-    "@chromatic-com/storybook"
+    getAbsolutePath('@storybook/addon-essentials'),
+    getAbsolutePath('@storybook/addon-interactions'),
   ],
 
   framework: {
-    name: getAbsolutePath("@storybook/react-vite"),
+    name: getAbsolutePath('@storybook/react-vite'),
     options: {
       builder: {
         viteConfigPath: 'vite.config.ts',
@@ -21,8 +20,8 @@ const config: StorybookConfig = {
   docs: {},
 
   typescript: {
-    reactDocgen: "react-docgen-typescript"
-  }
+    reactDocgen: 'react-docgen-typescript',
+  },
 };
 
 export default config;
@@ -32,5 +31,5 @@ export default config;
 // and https://nx.dev/recipes/storybook/custom-builder-configs
 
 function getAbsolutePath(value: string): any {
-  return dirname(require.resolve(join(value, "package.json")));
+  return dirname(require.resolve(join(value, 'package.json')));
 }
