@@ -26,6 +26,11 @@ jobs:
 
       - run: npm ci
       - uses: nrwl/nx-set-shas@v4
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    steps:
       - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
         with:
           build_command: npx nx run ui:build-storybook
