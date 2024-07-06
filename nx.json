@@ -1,5 +1,16 @@
 {
   "extends": "nx/presets/npm.json",
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "nxCloudAccessToken": "M2RkNjlmZjgtMWY4ZS00NTlmLWFkOWMtYzFjMjgzNGFkZjU4fHJlYWQtd3JpdGU="
+  "nxCloudAccessToken": "M2RkNjlmZjgtMWY4ZS00NTlmLWFkOWMtYzFjMjgzNGFkZjU4fHJlYWQtd3JpdGU=",
+  "plugins": [
+    {
+      "plugin": "@nx/storybook/plugin",
+      "options": {
+        "serveStorybookTargetName": "storybook",
+        "buildStorybookTargetName": "build-storybook",
+        "testStorybookTargetName": "test-storybook",
+        "staticStorybookTargetName": "static-storybook"
+      }
+    }
+  ]
 }
