@@ -27,6 +27,7 @@ jobs:
       - run: npm ci
       - uses: nrwl/nx-set-shas@v4
   deploy:
+    needs: [main]
     runs-on: ubuntu-latest
     environment:
       name: github-pages
