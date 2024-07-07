@@ -2,7 +2,9 @@
   "name": "glint",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "ci": "yarn install --frozen-lockfile"
+  },
   "private": true,
   "devDependencies": {
     "@nx/eslint": "19.4.1",
