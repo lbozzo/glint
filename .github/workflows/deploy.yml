@@ -1,0 +1,25 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+  workflow_run:
+    workflows: ['CI']
+    types: completed
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
+        with:
+          build_command: npx nx run ui:build-storybook
+          path: packages/ui/storybook-static
+          checkout: false
